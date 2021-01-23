@@ -1,0 +1,60 @@
+/* Custom Codes*/
+.jumbotron1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7rem;
+  color: red;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+  text-shadow: 2px 2px gray;
+  background-color: rgb(230, 233, 236);
+}
+/*
+img.productCard {
+  text-align: center;
+  width: 250px;
+  object-fit: cover;
+  padding: 1px;
+}
+*/
+
+/* overide corousel 
+.slider img, .card.image {
+  height: 450px;
+  object-fit: cover;
+}
+
+/*
+.pointer {
+  cursor: pointer;
+}
+*/
+
+/* Order status in Order.js*/
+.order-status .option{
+  border:none;
+}
+.Processing {
+  color: royalblue;
+  border:none;
+  font-size: 16px;
+  font-weight: bold;
+}
+.Dispatched {
+  color: orange;
+  border:none;
+  font-size: 16px;
+  font-weight: bold;
+}
+.Cancelled {
+  color: red;
+  border:none;
+  font-size: 16px;
+  font-weight: bold;
+}
+.Completed {
+  color: green;
+  border:none;
+  font-size: 16px;
+  font-weight: bold;
+}
