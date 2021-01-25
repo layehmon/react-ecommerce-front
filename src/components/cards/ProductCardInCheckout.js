@@ -8,7 +8,7 @@ import {
   CloseCircleOutlined,
   CloseOutlined,
 } from "@ant-design/icons";
-import { formatCurrency1 } from "../../utils";
+//import { formatCurrency1 } from "../../utils";
 
 const ProductCardInCheckout = ({ p }) => {
   const colors = ["Black", "Brown", "Blue", "Gold", "Green", "Red", "Silver", "White", "Yellow"];
@@ -27,6 +27,7 @@ const ProductCardInCheckout = ({ p }) => {
         if (product._id === p._id) {
           cart[i].color = e.target.value;
         }
+        return;
       });
 
       //  console.log('cart udpate color', cart)
