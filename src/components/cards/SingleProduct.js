@@ -94,25 +94,40 @@ const SingleProduct = ({ product, onStarClick, star }) => {
       </div>
 
       <div className="col-md-5">
-        <h5 className="text-center p-2 mt-2 mb-2 h4 jumbotron">
+        <h5 className="text-center p-2 mt-2 mb-2 h4 font-weight-bold jumbotron">
           {title}
         </h5>
         {product && product.ratings && product.ratings.length > 0 ? (
           showAverage(product)
         ) : (
-          <div className="text-center pt-1 pb-2">No rating yet</div>
+          <div className="text-center pt-1 pb-2 h6">No rating yet</div>
         )}
 
         <Card
           actions={[
             <Tooltip title={tooltip}>
-              <a onClick={handleAddToCart}>
-                <ShoppingCartOutlined className="text-danger" /> <br /> Add to
-                Cart
+              <a onClick={handleAddToCart} disabled={product.quantity < 1}>
+                {product.quantity < 1 ? 
+                  <div>
+                    <ShoppingCartOutlined className="text-danger h4" />
+                    <br /> 
+                    <div className="h6"> Out of stock </div>
+                  </div>
+                : 
+                  <div>
+                    <ShoppingCartOutlined className="text-success h4" /> 
+                    <br />
+                    <div className="h6"> Add to Cart </div>
+                </div>
+                
+                }
               </a>
             </Tooltip>,
+
             <a onClick={handleAddToWishlist}>
-              <HeartOutlined className="text-info" /> <br /> Add to Wishlist
+              <HeartOutlined className="text-info h5" /> 
+              <br /> 
+              <div className="h6"> Add to Wishlist </div>
             </a>,
             <RatingModal>
               <StarRating

@@ -79,38 +79,6 @@ const Login = ({ history }) => {
     }
   };
 
-  const googleLogin = async () => {
-    auth
-      .signInWithPopup(googleAuthProvider)
-      .then(async (result) => {
-        const { user } = result;
-        const idTokenResult = await user.getIdTokenResult();
-        
-        //to send token to backen
-      createOrUpdateUser(idTokenResult.token)
-      .then((res) => {
-        dispatch({
-          type: "LOGGED_IN_USER",
-          payload: {
-            name: res.data.name,
-            email: res.data.email,
-            token: idTokenResult.token,
-            role: res.data.role,
-            _id: res.data._id,
-          },
-        });
-        roleBaseRedirect(res);
-      })
-      .catch(err => console.log(err))
-        //history.push("/");
-      })
-      .catch((err) => {
-        console.log(err);
-        toast.error(err.message);
-      });
-     
-  };
-
   const loginForm = () => (
     <form onSubmit={handleSubmit}>
       <div className="form-group">
@@ -150,7 +118,37 @@ const Login = ({ history }) => {
     </form>
   );
 
-
+  const googleLogin = async () => {
+    auth
+      .signInWithPopup(googleAuthProvider)
+      .then(async (result) => {
+        const { user } = result;
+        const idTokenResult = await user.getIdTokenResult();
+        
+        //to send token to backen
+      createOrUpdateUser(idTokenResult.token)
+      .then((res) => {
+        dispatch({
+          type: "LOGGED_IN_USER",
+          payload: {
+            name: res.data.name,
+            email: res.data.email,
+            token: idTokenResult.token,
+            role: res.data.role,
+            _id: res.data._id,
+          },
+        });
+        roleBaseRedirect(res);
+      })
+      .catch(err => console.log(err))
+        //history.push("/");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error(err.message);
+      });
+     
+  };
 
   const facebookLogin = async () => {
     auth
@@ -195,11 +193,12 @@ const Login = ({ history }) => {
             ) : (
               <h4>Login</h4>
           )}
+          
           {loginForm()}
 
           <Button
             onClick={googleLogin}
-            type="primary"
+            type="danger"
             className="mb-3"
             block
             shape="round"
@@ -208,6 +207,7 @@ const Login = ({ history }) => {
           >
             Login with Google Account
           </Button>
+
 
           <Link to="/forgot/password" className="float-right text-danger">
              Forget Password

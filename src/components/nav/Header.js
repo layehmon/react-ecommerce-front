@@ -40,32 +40,32 @@ const Header = () => {
   };
 
   return (
-    <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
-      <Item key="home" icon={<AppstoreOutlined />}>
-        <Link to="/">Home</Link>
+    <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal" >
+      <Item key="home"  icon={<AppstoreOutlined className="h6" />}>
+        <Link className="h6" to="/"> Home </Link>
       </Item>
 
-      <Item key="shop" icon={<ShoppingOutlined />}>
-        <Link to="/shop">Shop</Link>
+      <Item key="shop" icon={<ShoppingOutlined className="h6" />}>
+        <Link className="h6" to="/shop">Shop</Link>
       </Item>
 
-      <Item key="cart" icon={<ShoppingCartOutlined />}>
+      <Item key="cart" icon={<ShoppingCartOutlined className="h5" />}>
         <Link to="/cart">
           <Badge count={cart.length} offset={[9, 0] }>
-            Cart
+            <div className="h6"> Cart</div> 
           </Badge>
         </Link>
       </Item>
 
       {!user && (
         <Item key="register" icon={<UserAddOutlined />} className="float-right">
-          <Link to="/register">Register</Link>
+          <Link className="h6" to="/register">Register</Link>
         </Item>
       )}
 
       {!user && (
         <Item key="login" icon={<UserOutlined />} className="float-right">
-          <Link to="/login">Login</Link>
+          <Link className="h6" to="/login">Login</Link>
         </Item>
       )}
 
@@ -94,7 +94,7 @@ const Header = () => {
       )}
 
       <span className="float-right p-1">
-        <Search />
+        <Search className="h6" />
       </span>
     </Menu>
   );

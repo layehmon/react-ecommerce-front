@@ -122,6 +122,7 @@ const Checkout = ({ history }) => {
         value={coupon}
         type="text"
         className="form-control"
+        placeholder="Enter Coupon Code"
       />
       <button onClick={applyDiscountCoupon} className="btn btn-primary mt-2">
         Apply Coupon

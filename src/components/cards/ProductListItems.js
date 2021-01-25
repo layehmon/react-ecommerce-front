@@ -14,7 +14,7 @@ const ProductListItems = ({ product }) => {
   } = product;
 
   return (
-    <ul className="list-group">
+    <ul className="list-group h6">
       <li className="list-group-item">
         Price:{" "}
         <span className="label label-default label-pill pull-xs-right">
