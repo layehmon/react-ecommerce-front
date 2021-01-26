@@ -102,17 +102,18 @@ const ProductUpdateForm = ({
           onChange={handleChange}
         />
       </div>
-      
+
       <div className="form-group">
         <label>Color</label>
-        <select 
+        <select
           value={color}
-          name="color" 
-          className="form-control" 
+          name="color"
+          className="form-control"
           onChange={handleChange}
-          >
-          {mycolors.map((c) => (
+        >
+          {colors.map((c) => (
             <option key={c} value={c}>
+              {console.log("color: ",c)}
               {c}
             </option>
           ))}
