@@ -76,9 +76,14 @@ const SingleProduct = ({ product, onStarClick, star }) => {
     <>
       <div className="col-md-7">
         {images && images.length ? (
-          <Carousel showArrows={true} autoPlay infiniteLoop>
-            {images && images.map((i) => <img src={i.url} key={i.public_id} />)}
-          </Carousel>
+          <div className="carousel-container"> 
+            <Carousel 
+              showArrows={true} 
+              autoPlay infiniteLoop
+            >
+              {images && images.map((i) => <img src={i.url} key={i.public_id} />)}
+            </Carousel>
+          </div>
         ) : (
           <Card cover={<img src={Laptop} className="mb-3 card-image" />}></Card>
         )}
@@ -94,9 +99,9 @@ const SingleProduct = ({ product, onStarClick, star }) => {
       </div>
 
       <div className="col-md-5">
-        <h5 className="text-center p-2 mt-2 mb-2 h4 font-weight-bold jumbotron">
+        <div className="text-center p-2 mt-2 mb-2 h5 font-weight-bold jumbotron">
           {title}
-        </h5>
+        </div>
         {product && product.ratings && product.ratings.length > 0 ? (
           showAverage(product)
         ) : (

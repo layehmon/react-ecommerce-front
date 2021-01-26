@@ -41,15 +41,15 @@ const Header = () => {
 
   return (
     <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal" >
-      <Item key="home"  icon={<AppstoreOutlined className="h6" />}>
+      <Item key="home"  icon={<AppstoreOutlined />}>
         <Link className="h6" to="/"> Home </Link>
       </Item>
 
-      <Item key="shop" icon={<ShoppingOutlined className="h6" />}>
+      <Item key="shop" icon={<ShoppingOutlined />}>
         <Link className="h6" to="/shop">Shop</Link>
       </Item>
 
-      <Item key="cart" icon={<ShoppingCartOutlined className="h5" />}>
+      <Item key="cart" icon={<ShoppingCartOutlined />}>
         <Link to="/cart">
           <Badge count={cart.length} offset={[9, 0] }>
             <div className="h6"> Cart</div> 
@@ -72,7 +72,9 @@ const Header = () => {
       {user && (
         <SubMenu
           icon={<SettingOutlined />}
-          title={user.email && user.email.split("@")[0]}
+          title={user.email && 
+            <span className="h6 font-weight-bold"> { user.email.split("@")[0] } </span>
+          }
           className="float-right"
         >
           {user && user.role === "subscriber" && (
@@ -93,9 +95,9 @@ const Header = () => {
         </SubMenu>
       )}
 
-      <span className="float-right p-1">
+      <div className="float-right p-1">
         <Search className="h6" />
-      </span>
+      </div>
     </Menu>
   );
 };

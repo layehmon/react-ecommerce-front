@@ -9,6 +9,10 @@
   text-shadow: 2px 2px gray;
   background-color: rgb(230, 233, 236);
 }
+
+.carousel-container .carousel .slide{ 
+  background: none;
+}
 /*
 img.productCard {
   text-align: center;

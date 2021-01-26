@@ -320,7 +320,7 @@ const Shop = () => {
     <div className="container-fluid">
       <div className="row">
         <div className="col-md-3 pt-2">
-          <h5>Search Filter </h5>
+          <h4>Search Filter </h4>
           <hr />
           {/** control which key to open {["1", "2", "3", "4", "5", "6", "7"]}  */}
           <Menu
@@ -433,9 +433,9 @@ const Shop = () => {
 
           <div className="col-md-9 pt-2">
           {loading ? (
-            <h5 className="text-info">Loading...</h5>
+            <h4 className="text-info">Loading...</h4>
           ) : (
-            <h5 className="text-gray">Products</h5>
+            <h4 className="text-gray">Products</h4>
           )}
 
           {products.length < 1 && <p>No products found</p>}
