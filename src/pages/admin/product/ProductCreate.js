@@ -36,7 +36,9 @@ const initialState = {
   ],
   mycolors: ["Black", "Brown", "Blue", "Gold", "Gray", "Green",  "Red", "Silver", "White", "Yellow"],
   colors: [],
-  brands: ["Apple", "ASUS", "Belkin", "Dell", "Epson", "Huawei", "HP", "Lenovo", "LG", "Microsoft", "Oppo","Samsung", "Sony", "Toshiba", "Vivo", "Others", "No Brand"],
+  brands: [
+    "Apple", "ASUS", "Belkin", "Brother", "Canon", "Dell", "Epson", "Huawei", "HP", "Lenovo", "LG", "Microsoft", "Oppo","Samsung", "Sony", "Toshiba", "Vivo", "Xerox", "Others", "No Brand"
+  ],
   color: "White",
   brand: "Apple",
 };
