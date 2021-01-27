@@ -120,24 +120,7 @@ const ProductCreateForm = ({
         </select>
       </div>
 
-      <div className="form-group">
-        <label>Color Array</label>
-        <Select
-            mode="multiple"
-            style={{ width: "100%" }}
-            placeholder="Please select"
-            value={colors}
-            onChange={(value) => setValues({ ...values, colors: value })}
-          >
-            {console.log("colorOptions: ",colorOptions.length)}
-            {colorOptions.length &&
-              colorOptions.map((s) => (
-                <Option key={s._id} value={s._id}>
-                  {s.name}
-                </Option>
-              ))}
-          </Select>
-      </div>
+     
 
       <div className="form-group">
         <label>Brand</label>
