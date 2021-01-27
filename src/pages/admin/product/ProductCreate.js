@@ -35,8 +35,8 @@ const initialState = {
     // },
   ],
   mycolors: ["Black", "Brown", "Blue", "Gold", "Gray", "Green",  "Red", "Silver", "White", "Yellow"],
-  colors: ["Black", "Brown", "Blue", "Gold", "Gray", "Green",  "Red", "Silver", "White", "Yellow"],
-  brands: ["Apple", "ASUS", "Huawei", "HP", "Lenovo", "LG", "Microsoft", "Oppo","Samsung", "Sony", "Toshiba", "Vivo", "Others", "No Brand"],
+  colors: [],
+  brands: ["Apple", "ASUS", "Belkin", "Dell", "Epson", "Huawei", "HP", "Lenovo", "LG", "Microsoft", "Oppo","Samsung", "Sony", "Toshiba", "Vivo", "Others", "No Brand"],
   color: "White",
   brand: "Apple",
 };
@@ -45,6 +45,7 @@ const ProductCreate = () => {
   const [values, setValues] = useState(initialState);
   const [subOptions, setSubOptions] = useState([]);
   const [showSub, setShowSub] = useState(false);
+  const [colorOptions, setColorOptions] = useState([]);
   const [loading, setLoading] = useState(false);
 
   // redux
@@ -87,6 +88,12 @@ const ProductCreate = () => {
     });
     setShowSub(true);
   };
+  
+  const handleColorChange = (e) => {
+    e.preventDefault();
+    console.log("CLICKED COLOR", e.target.value);
+    //setValues({ ...values, colors: [] }); 
+  };
 
   return (
     <div className="container-fluid">
@@ -120,6 +127,8 @@ const ProductCreate = () => {
             values={values}
             handleCatagoryChange={handleCatagoryChange}
             subOptions={subOptions}
+            handleColorChange={handleColorChange}
+            colorOptions={colorOptions}
             showSub={showSub}
           />
         </div>
