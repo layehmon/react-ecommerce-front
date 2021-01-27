@@ -28,9 +28,7 @@ const Shop = () => {
   const [star, setStar] = useState("");
   const [subs, setSubs] = useState([]);
   const [sub, setSub] = useState("");
-  const [brands, setBrands] = useState([
-    "Apple", "ASUS", "Belkin", "Brother", "Canon", "Dell", "Epson", "Huawei", "HP", "Lenovo", "LG", "Microsoft", "Oppo","Samsung", "Sony", "Toshiba", "Vivo", "Xerox", "Others", "No Brand"
-  ]);
+  const [brands, setBrands] = useState(["Apple", "ASUS", "Belkin", "Brother", "Canon", "Dell", "Epson", "Huawei", "HP", "Lenovo", "LG", "Microsoft", "Oppo","Samsung", "Sony", "Toshiba", "Vivo", "Xerox", "Others", "No Brand"]);
 
   const [brand, setBrand] = useState("");
   const [colors, setColors] = useState([
