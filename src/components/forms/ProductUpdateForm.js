@@ -119,7 +119,6 @@ const ProductUpdateForm = ({
         </select>
       </div>
 
-
       <div>
           <label>Color Available</label>
           <Select

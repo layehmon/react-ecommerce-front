@@ -41,7 +41,6 @@ const ProductCreateForm = ({
           className="form-control"
           value={title}
           onChange={handleChange}
-          placeholder="Enter title"
         />
       </div>
 
@@ -50,7 +49,6 @@ const ProductCreateForm = ({
         <input
           type="text"
           name="description"
-          placeholder="Enter description"
           className="form-control"
           value={description}
           onChange={handleChange}
@@ -62,7 +60,6 @@ const ProductCreateForm = ({
         <input
           type="text"
           name="moreInfo"
-          placeholder="Enter more information"
           className="form-control"
           value={moreInfo}
           onChange={handleChange}
@@ -74,7 +71,6 @@ const ProductCreateForm = ({
         <input
           type="number"
           name="price"
-          placeholder="Enter price"
           className="form-control"
           value={price}
           onChange={handleChange}
@@ -86,7 +82,6 @@ const ProductCreateForm = ({
         <input
           type="number"
           name="quantity"
-          placeholder="Enter quantity ( Number only: 1, 5, 10, 100 ect.)"
           className="form-control"
           value={quantity}
           onChange={handleChange}
