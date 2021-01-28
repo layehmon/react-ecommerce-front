@@ -8,10 +8,17 @@ const ProductListItems = ({ product }) => {
     subs,
     shipping,
     color,
+    colors,
     brand,
     quantity,
     sold,
   } = product;
+
+  //to spit array into  text string with comma and space
+  const renderColorArray = (array) => {
+    let str = array.join(', ');
+    return str; 
+  }
 
   return (
     <ul className="list-group h6">
@@ -64,6 +71,13 @@ const ProductListItems = ({ product }) => {
       </li>
 
       <li className="list-group-item">
+        Color Available:{ " "}
+        <span className="label label-default label-pill pull-xs-right">
+          {colors && renderColorArray(colors)}
+        </span>
+      </li>
+
+      <li className="list-group-item">
         Brand:{" "}
         <span className="label label-default label-pill pull-xs-right">
           {brand}
@@ -71,7 +85,7 @@ const ProductListItems = ({ product }) => {
       </li>
 
       <li className="list-group-item">
-        Available:{" "}
+        In Stock:{" "}
         <span className="label label-default label-pill pull-xs-right">
           {quantity}
         </span>

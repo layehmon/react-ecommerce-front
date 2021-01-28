@@ -16,7 +16,7 @@ const Cart = ({ history }) => {
 
   const getTotal = () => {
     return cart.reduce((currentValue, nextValue) => {
-      return formatCurrency(currentValue + nextValue.count * nextValue.price);
+      return currentValue + nextValue.count * nextValue.price;
     }, 0);
   };
 

@@ -34,8 +34,8 @@ const initialState = {
     //     "https://res.cloudinary.com/dcqjrwaoi/image/upload/v1599480913/ho6wnp7sugyemnmtoogf.jpg",
     // },
   ],
-  mycolors: ["Black", "Brown", "Blue", "Gold", "Gray", "Green",  "Red", "Silver", "White", "Yellow"],
   colors: [],
+  mycolors: ["Black", "Brown", "Blue", "Gold", "Gray", "Green",  "Red", "Silver", "White", "Yellow"],
   brands: ["Apple", "ASUS", "Belkin", "Brother", "Canon", "Dell", "Epson", "Huawei", "HP", "Lenovo", "LG", "Microsoft", "Oppo","Samsung", "Sony", "Toshiba", "Vivo", "Xerox", "Others", "No Brand"],
   color: "White",
   brand: "Apple",
@@ -45,7 +45,6 @@ const ProductCreate = () => {
   const [values, setValues] = useState(initialState);
   const [subOptions, setSubOptions] = useState([]);
   const [showSub, setShowSub] = useState(false);
-  const [colorOptions, setColorOptions] = useState([]);
   const [loading, setLoading] = useState(false);
 
   // redux
@@ -62,7 +61,7 @@ const ProductCreate = () => {
     e.preventDefault();
     createProduct(values, user.token)
       .then((res) => {
-        console.log(res);
+        console.log("product: ", res);
         window.alert(`"${res.data.title}" is created`);
         window.location.reload();
       })
@@ -80,21 +79,15 @@ const ProductCreate = () => {
 
   const handleCatagoryChange = (e) => {
     e.preventDefault();
-    console.log("CLICKED CATEGORY", e.target.value);
+    //console.log("CLICKED CATEGORY", e.target.value);
     setValues({ ...values, subs: [], category: e.target.value });
     getCategorySubs(e.target.value).then((res) => {
-      console.log("SUB OPTIONS ON CATGORY CLICK", res);
+      //console.log("SUB OPTIONS ON CATGORY CLICK", res);
       setSubOptions(res.data);
     });
     setShowSub(true);
   };
   
-  const handleColorChange = (e) => {
-    e.preventDefault();
-    console.log("CLICKED COLOR", e.target.value);
-    //setValues({ ...values, colors: [] }); 
-  };
-
   return (
     <div className="container-fluid">
       <div className="row">
@@ -127,8 +120,6 @@ const ProductCreate = () => {
             values={values}
             handleCatagoryChange={handleCatagoryChange}
             subOptions={subOptions}
-            handleColorChange={handleColorChange}
-            colorOptions={colorOptions}
             showSub={showSub}
           />
         </div>

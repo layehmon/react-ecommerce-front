@@ -10,8 +10,6 @@ const ProductCreateForm = ({
   values,
   handleCatagoryChange,
   subOptions,
-  handleColorChange,
-  colorOptions,
   showSub,
 }) => {
   // destructure
@@ -84,6 +82,18 @@ const ProductCreateForm = ({
       </div>
 
       <div className="form-group">
+        <label>Quantity</label>
+        <input
+          type="number"
+          name="quantity"
+          placeholder="Enter quantity ( Number only: 1, 5, 10, 100 ect.)"
+          className="form-control"
+          value={quantity}
+          onChange={handleChange}
+        />
+      </div>
+
+      <div className="form-group">
         <label>Shipping</label>
         <select
           name="shipping"
@@ -97,20 +107,12 @@ const ProductCreateForm = ({
       </div>
 
       <div className="form-group">
-        <label>Quantity</label>
-        <input
-          type="number"
-          name="quantity"
-          placeholder="Enter quantity ( Number only: 1, 5, 10, 100 ect.)"
-          className="form-control"
-          value={quantity}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div className="form-group">
         <label>Color</label>
-        <select name="color" className="form-control" onChange={handleChange}>
+        <select
+          name="color" 
+          className="form-control" 
+          onChange={handleChange}
+          >
           <option>Please select</option>
           {mycolors.map((c) => (
             <option key={c} value={c}>
@@ -118,6 +120,25 @@ const ProductCreateForm = ({
             </option>
           ))}
         </select>
+      </div>
+
+
+      <div>
+          <label>Color Available</label>
+          <Select
+            mode="multiple"
+            style={{ width: "100%" }}
+            placeholder="Please select"
+            value={colors}
+            onChange={(value) => setValues({ ...values, colors: value })}
+          >
+            {mycolors.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+          ))}
+            
+          </Select>
       </div>
 
      

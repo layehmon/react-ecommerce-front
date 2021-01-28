@@ -11,7 +11,9 @@ import {
 //import { formatCurrency1 } from "../../utils";
 
 const ProductCardInCheckout = ({ p }) => {
-  const colors = ["Black", "Brown", "Blue", "Gold", "Green", "Red", "Silver", "White", "Yellow"];
+  //const colors = ["Black", "Brown", "Blue", "Gold", "Green", "Red", "Silver", "White", "Yellow"];
+  const colors = p.colors;
+
   let dispatch = useDispatch();
 
   const handleColorChange = (e) => {
@@ -113,7 +115,7 @@ const ProductCardInCheckout = ({ p }) => {
             name="color"
             className="form-control"
           >
-            {p.color ? (
+            {p.colors ? (
               <option value={p.color}>{p.color}</option>
             ) : (
               <option>Select</option>

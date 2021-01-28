@@ -119,6 +119,25 @@ const ProductUpdateForm = ({
         </select>
       </div>
 
+
+      <div>
+          <label>Color Available</label>
+          <Select
+            mode="multiple"
+            style={{ width: "100%" }}
+            placeholder="Please select"
+            value={colors}
+            onChange={(value) => setValues({ ...values, colors: value })}
+          >
+            {mycolors.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+          ))}
+            
+          </Select>
+      </div>
+
       <div className="form-group">
         <label>Brand</label>
         <select
