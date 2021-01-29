@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ModalImage from "react-modal-image";
 import laptop from "../../images/laptop.png";
 import { useDispatch } from "react-redux";
@@ -12,12 +12,14 @@ import {
 
 const ProductCardInCheckout = ({ p }) => {
   //const colors = ["Black", "Brown", "Blue", "Gold", "Green", "Red", "Silver", "White", "Yellow"];
-  const colors = p.colors;
+  //const colors = p.colors;
 
   let dispatch = useDispatch();
 
   const handleColorChange = (e) => {
     console.log("color changed", e.target.value);
+    
+    //selectedColor(e.target.value);
 
     let cart = [];
     if (typeof window !== "undefined") {
@@ -115,12 +117,7 @@ const ProductCardInCheckout = ({ p }) => {
             name="color"
             className="form-control"
           >
-            {p.colors ? (
-              <option value={p.color}>{p.color}</option>
-            ) : (
-              <option>Select</option>
-            )}
-            {colors
+            {p.colors && p.colors
               .filter((c) => c !== p.color)
               .map((c) => (
                 <option key={c} value={c}>

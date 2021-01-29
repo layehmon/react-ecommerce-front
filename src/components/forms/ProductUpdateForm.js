@@ -8,7 +8,7 @@ const ProductUpdateForm = ({
   handleChange,
   setValues,
   values,
-  handleCatagoryChange,
+  handleCategoryChange,
   categories,
   subOptions,
   arrayOfSubs,
@@ -158,7 +158,7 @@ const ProductUpdateForm = ({
         <select
           name="category"
           className="form-control"
-          onChange={handleCatagoryChange}
+          onChange={handleCategoryChange}
           value={selectedCategory ? selectedCategory : category._id}
         >
           {categories.length > 0 &&
@@ -169,6 +169,8 @@ const ProductUpdateForm = ({
             ))}
         </select>
       </div>
+
+     
 
       <div>
         <label>Sub Categories</label>

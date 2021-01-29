@@ -43,7 +43,7 @@ const ProductCard = ({ product }) => {
       //show tooltip
       setTooltip("Added");
 
-      // add to reeux state
+      // add to redux state
       dispatch({
         type: "ADD_TO_CART",
         payload: unique,
